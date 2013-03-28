@@ -9,6 +9,11 @@
 	background-repeat: no-repeat;
 }
 
+#tm {
+	/*background-image: url(../img/tm.png);
+	background-repeat: no-repeat;*/
+}
+
 #centering {
 	text-align: center;
 	margin:0 auto;
