@@ -67,16 +67,16 @@
                             David M. Blei. <a target="_blank" href="http://www.cs.princeton.edu/~blei/papers/Blei2012.pdf">Probabilistic Topic Models</a>. <i>Communications of the ACM</i>, 55(4):77–84, 2012.
                             <ul><li> A high-level overview of probabilistic topic models. </li></ul>
                         </li>
-                        <li>
+                        <li><b>
                             Adler J Perotte, Frank Wood, Noémie Elhadad, and Nicholas Bartlett. <a target="_blank" href="http://people.dbmi.columbia.edu/noemie/papers/nips11.pdf">Hierarchically Supervised Latent Dirichlet Allocation</a>. <i>Neural Information Processing Systems</i>, 2011.
-                            <ul><li> The model HSLDA was applied to large-scale data from clinical document labeling and retail product categorization tasks. </li></ul>
+                            <ul><li> The model HSLDA was applied to large-scale data from clinical document labeling and retail product categorization tasks. </li></ul></b>
                         </li>
                         <li>
                             D. Blei, T. Griffiths, and M. Jordan. <a target="_blank" href="http://www.cs.princeton.edu/~blei/papers/BleiGriffithsJordan2009a.pdf">The nested Chinese restaurant process and Bayesian nonparametric inference of topic hierarchies</a>. <i>Journal of the ACM</i>, 57:2 1–30, 2010.
                         </li>
-                        <li>
-                            David Newman, Sarvnaz Karimi, and Lawrence Cavedon. <a target="_blank" href="http://www.ics.uci.edu/~newman/pubs/Newman-AI09.pdf"><b>Topic Models to Interpret MeSH – MEDLINE’s Medical Subject Headings</b></a>. <i>Advances in Artificial Intelligence</i>, 2009.
-                            <ul><li> <b><i>The paper shows how topic models are useful for interpreting and understanding MeSH, the Medical Subject Headings applied to articles in MEDLINE.</i></b> </li></ul>
+                        <li><b>
+                            David Newman1, Sarvnaz Karimi, and Lawrence Cavedon. <a target="_blank" href="http://www.ics.uci.edu/~newman/pubs/Newman-AI09.pdf">Topic Models to Interpret MeSH – MEDLINE’s Medical Subject Headings</a>. <i>Advances in Artificial Intelligence</i>, 2009.
+                            <ul><li> The paper shows how topic models are useful for interpreting and understanding MeSH, the Medical Subject Headings applied to articles in MEDLINE. </li></ul></b>
                         </li>
                         <li>
                             C. Wang and D. Blei. <a target="_blank" href="http://www.cs.princeton.edu/~blei/papers/WangBlei2009d.pdf">Variational inference for the nested Chinese restaurant process</a>. <i>Neural Information Processing Systems</i>, 2009.
@@ -94,14 +94,13 @@
                             David M. Blei, Andrew Ng, Michael Jordan. <a target="_blank" href="http://www.cs.princeton.edu/~blei/papers/BleiNgJordan2003.pdf">Latent Dirichlet Allocation</a>. <i>Journal of Machine Learning Research</i>, 3:993–1022, 2003.
                         </li>
                     </ul>
-
                 </div>                
             </div>
 
             <div class="row">
                 <div class="span12">
                     <h3>Implementations</h3>
-                    <p><i>Partially adopted from <a href="http://www.cs.princeton.edu/~blei/topicmodeling.html" target="_blank">David Blei's Topic Modeling page</a></i></p>
+                    <p><i>Note: The table format and content of the first two rows are borrowed from <a href="http://www.cs.princeton.edu/~blei/topicmodeling.html" target="_blank">David Blei's Topic Modeling page</a></i></p>
                      <table border="1" class="table">
                         <colgroup>
                             <col width="5%">
@@ -117,51 +116,61 @@
                         <td> <i> <b> Notes </b></i>
                         </thead>
                         <tr>
-                        <td> <a href="http://www.cs.princeton.edu/~blei/lda-c/index.html"> lda-c </q> </td>
+                        <td> <a target="_blank" href="http://www.cs.princeton.edu/~blei/lda-c/index.html"> lda-c </q> </td>
                         <td> Latent Dirichlet allocation </td>
                         <td> C </td> <td> D. Blei </td>
                         <td> This implements variational inference for LDA.
 
                         <tr>
-                        <td> <a href="http://www.cs.cmu.edu/~chongw/slda/">class-slda</a> <td>
+                        <td> <a target="_blank" href="http://www.cs.cmu.edu/~chongw/slda/">class-slda</a> <td>
                             Supervised topic models for classifiation <td> C++ <td> C. Wang
                         <td> Implements supervised topic models with a categorical response.
                         
                         <tr>
-                        <td> <a href="http://gibbslda.sourceforge.net/">GibbsLDA++</a>
+                        <td> <a target="_blank" href="http://gibbslda.sourceforge.net/">GibbsLDA++</a>
                         <td> A C/C++ Implementation of Latent Dirichlet Allocation
                         <td> C/C++
                         <td>  Xuan-Hieu Phan and Cam-Tu Nguyen
                         <td> Uses Gibbs Sampling technique for parameter estimation and inference. It is very fast and is designed to analyze hidden/latent topic structures of large-scale datasets including large collections of text/Web documents.
 
                         <tr>
-                        <td> <a href="http://mallet.cs.umass.edu/">MALLET</a>
+                        <td> <a target="_blank" href="http://mallet.cs.umass.edu/">MALLET</a>
                         <td> A Machine Learning for Language Toolkit
                         <td> Java
                         <td> Andrew Kachites McCallum
                         <td> Implements Gibbs sampling for LDA in Java using fast sampling methods. MALLET also includes support for data preprocessing, classification, and sequence tagging. 
 
                         <tr>
-                        <td> <a href="http://radimrehurek.com/gensim/">Gensim</a>
+                        <td> <a target="_blank" href="http://radimrehurek.com/gensim/">Gensim</a>
                         <td> A Python package for topic modelling.
                         <td> Python
                         <td> Radim Řehůřek
                         <td> Includes distributed and online implementation of variational LDA. 
 
                         <tr>
-                        <td> <a href="https://sites.google.com/site/rameshnallapati/software">Multithreaded LDA</a>
+                        <td> <a target="_blank" href="https://sites.google.com/site/rameshnallapati/software">Multithreaded LDA</a>
                         <td> Multithreaded extension of Blei's LDA implementation. 
                         <td> C
                         <td> Ramesh Nallapati
                         <td> Speeds up the computation by orders of magnitude depending on the number of processors. 
 
                         <tr>
-                        <td> <a href="http://nlp.stanford.edu/software/tmt/tmt-0.4/">Stanford Topic Modeling Toolbox</a>
+                        <td> <a target="_blank" href="http://nlp.stanford.edu/software/tmt/tmt-0.4/">Stanford Topic Modeling Toolbox</a>
                         <td> Scala implementation of LDA and Labeled LDA.
                         <td> Scala
                         <td> Daniel Ramage and Evan Rosen
                         <td> Import and manipulate text from cells in Excel and other spreadsheets. Generate rich Excel-compatible outputs for tracking word usage across topics, time, and other groupings of data.
                     </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span12">
+                    <h3>Corpora</h3>
+                    <ul>
+                            <li> <a target="_blank" href="http://gibbslda.sourceforge.net/wikipedia-topics.txt">200 topics from Wikipedia </a>(240Mb, 71,986 docs) </li>
+                            <li> <a target="_blank" href="http://gibbslda.sourceforge.net/ohsumed-topics.txt">200 topics from Ohsumed </a> (a subset of MEDLINE abstracts, 156Mb, 233,442 abstracts) </li>
+                        </ul>
                 </div>
             </div>
             
