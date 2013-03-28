@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#">Twitter Mining for Drug-related Adverse Events </a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="#">AE-SNA</a></li>
+                            <!--<li><a href="ae-sna-lda.html">AE-SNA</a></li>-->
+                            <li><a href="topic-modeling.html">Topic Modeling</a></li>
+                        </ul>                        
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <!-- Main hero unit for a primary marketing message or call to action -->
+            <div class="hero-unit" id="title">
+                <h2>Discovering Drug-related Adverse Events from Social Media Using Topic Models</h2>
+                <!--<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+                <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+                -->
+            </div>
+
+            <div class="row">
+                <div class="span12">
+                    <h3>Problem: early detection of drug-related adverse events</h3>
+                    <p>According to the Food and Drug Administration (FDA), an Adverse Event (AE) is "any undesirable experience associated with the use of a medical product." Early detection of drug-related adverse events benefits not only the drug regulators and manufacturers for pharmacovigilance, but also patients as certain adverse events can be life-threatening.</p>
+                    <p>In order to capture AEs and Adverse Drug Reactions (ADRs), various surveillance systems—spontaneous reporting systems (SRSs)—have been developed around the world. In the US, The FDA’s Adverse Event Reporting System (AERS) is a major SRS with more than four million reports. In Europe, the European Medicines Agency developed the EudraVigilince. The World Health Organization has an international pharmacovigilance system as well. Aforementioned SRSs (particularly AERS) contain many reported post-market drugs' AEs. Although drug manufactures are required to report all known AEs, the majority of adverse events are detected by physicians and patients, where reporting is voluntary. Thus, the overall incidences of AEs can be significantly underestimated.</p>
+                </div>                
+            </div>
+
+            <div class="row">
+                <div class="span12">
+                    <h3>Method: discovering AEs through mining social media</h3>
+                    <p>Social media especially Twitter, given its deep roots in people's daily lives, 
+                        has a great potential of becoming a new data feed for real-time pharmacovigilance. 
+                        For example, from such a Twitter message (i.e., tweet) <i>"this warm weather + tamoxifen hot 
+                        flushes is a nightmare!"</i> we can infer the possible drug use ("tamoxifen") and associated 
+                        side effects ("hot flushes") about the tweet publisher. The knowledge discovered through 
+                        social media mining can certainly be used to identify new adverse events in a timely 
+                        manner and to confirm those adverse events reported through existing mechanisms.</p>
+                    <p>In [1], we proposed an analytic framework for detection of drug-related AEs using tweets. 
+                        Specifically, we built Support Vector Machine (SVM) models with textural and ontological features 
+                        extracted from tweets. However, the feature extraction methods we applied are not designed for 
+                        tweet-like social media contents that often contain 1) misspellings, odd abbreviations and non-word 
+                        terms, and 2) fragmented and ungrammatical sentences. Thus, the identification accuracy of the 
+                        models is not satisfying ( 74%). In this work, we employ a powerful topic modeling method for 
+                        feature extraction. </p>
+                </div>                
+            </div>
+
+            <div class="row">
+                <div class="span12">
+                    <h3>Technique I: topic model based feature extraction</h3>
+                    <div id="centering" class="span6 clearfix"><img src="img/IntroToLDA.png" alt="Latent Dirichlet Allocation Illustration"
+                             style="width: 800px; margin-top: 10px">
+                    <span><b>Figure 1:</b> Illustration of the intuitions behind latent Dirichlet allocation (Courtesy of CACM)</span></div>
+                    <br/>
+                    <p>Topic models are statistical algorithms that can discover the main themes 
+                        from a large unstructured collection of documents by analyzing the words of the texts. 
+                        Topic models can organize the collection according to the discovered themes. One of the most
+                        important features of topic models is that they do not require any prior annotations or labeling
+                        of the documents—the topics emerge from the analysis of the original texts. A very nice 
+                        <a target="_blank" href="http://www.cs.princeton.edu/~blei/papers/Blei2012.pdf">introduction</a> to topic modeling
+                        by David Blei was recently published at CACM.</p>
+                     <p>Latent Dirichlet Allocation (LDA) is the simplest topic model. The intuition
+                        behind LDA is that documents exhibit multiple topics. For example, consider the article in Figure 1. 
+                        The article "Seeking Life's Bare (Genetic) Necessities" is about using data analysis 
+                        to determine the number of genes an organism needs to survive. The article comprises multiple 
+                        topics such as <i> data analysis </i> (words highlighted in blue: data, number, computer) and 
+                        <i> genetics </i> (words highlighted in yellow: dna, gene, genetic). LDA can be used to discover
+                        those topics in an unsupervised manner. </p>
+                    <p><a target="_blank" href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5291818&tag=1">Previous study</a> 
+                        has shown that LDA based feature selection is reliable and generally better than document frequency
+                        based feature selection. In this study, we apply the LDA model to categorize the collection of 
+                        tweets into latent topics. In the LDA model, each document (tweet(s) in our study)—treated as 
+                        a vector of word counts using the bag-of-words approach—is viewed as a mixture of probabilities 
+                        over the topics, where each topic is represented as a probability distribution over a set of words. 
+                        We then use the probability distribution of topics as features to train the SVM prediction models. </p>
+
+                        <p>Before applying the LDA algorithm, we first sanitize the dataset by removing 
+                        the hyperlinks, hash-tags "#" and reply-tags "@", and then apply the WordNet Lemmatizer in the 
+                        <a target="_blank" href="http://nltk.org/">NTLK</a> to group the different inflected forms of a word into its lemma. 
+                        By doing so, we create a "clean" dictionary for the LDA model. </p>
+                </div>                
+            </div>
+
+            <div class="row">
+                <div class="span12">
+                    <h3>Technique II: AEs discovery through mining tweets</h3>
+                    <p>The process of discovering AEs from tweets has two parts: 1) identifying the 
+                        users of the drug of interest, and 2) finding possible side effects attributed to the use of the drug. 
+                        In both parts, an SVM classification model is built based on features extracted from tweets.
+                        The overall process of tweets mining and performance improvement by using LDA based feature extraction
+                        can be found in the poster below.</p>
+                    <div id="centering" class="span6 clearfix"><img src="img/AE-SNA-TBI-thumbnail.png" style="width: 800px; margin-top: 10px">
+                    <span><b>Figure 2:</b> The poster presented at AMIA TBI 2013&nbsp;(<a target="_blank" href="img/AE-SNA-TBI.png">Full Size</a>)</span></div>
+                </div>                
+            </div>
+
+            <div class="row">
+                <div class="span12">
+                    <h3>Results</h3>
+                    <p>The performance of both SVM models has been much improved compared to the previous study. 
+                        The mean accuracy of the model for identifying drug users is 79% (ROC-AUC value is 0:87). For the AE 
+                        classification model, the accuracy is 81% (ROC-AUC is 0:86). We believe that the performance improvement 
+                        is mainly due to the improved features.</p>
+                    <p>In the previous study, the ontological features are extracted using MetaMap based on 
+                        UMLS Metathesaurus concepts. The MetaMap’s NLP models are trained on biomedical literature that 
+                        1) contain less language errors and 2) are formulated with standard medical terminologies. 
+                        However, Twitter users have a very different vocabulary and their writing styles are usually informal. 
+                        In this study, we apply the LDA model directly to the tweets without introducing a different vocabulary. 
+                        Furthermore, the methods for obtaining textual features in the previous study require manual analyses of 
+                        the tweets to identify language features related to the tasks. In contrast, LDA is a data-driven method, 
+                        where neither prior knowledge of the topics and nor explicit "understanding" of the language is required.</p>
+                </div>                
+            </div>
+
+            <div class="row">
+                <div class="span12">
+                    <h3>Project Members</h3>
+                    <ul>
+                        <li><a target="_blank" href="http://ualr.edu/mxxie/">Mengjun Xie</a>, Computer Science @UALR</li>
+                        <li>Umit Topaloglu, Biomedical Informatics @UAMS</li>
+                        <li>Yu Fan, Research Program, Information Techonology @UAMS</li>
+                        <li><a target="_blank" href="http://jiangbian.info/">Jiang Bian</a>, Biomedical Informatics @UAMS</li>
+                    </ul>
+                </div>                
+            </div>
+
+            <div class="row">
+                <div class="span12">
+                    <h3>Tools used for this study</h3>
+                    <ul>
+                        <li> <a target="_blank" href="http://radimrehurek.com/gensim/index.html">Gensim - Topic Modelling for Humans</a>. Gensim is a Python based software suite for topic modeling. A very nice <a target="_blank" href="http://radimrehurek.com/gensim/tutorial.html">tutorial</a> of using gensim for topic modeling (including LDA) is also provided there.</li>
+                        <li> <a target="_blank" href="http://http://metamap.nlm.nih.gov/">MetaMap</a></li>
+                    </ul>
+                </div>                
+            </div>
+
+            <div class="row">
+                <div class="span12">
+                    <h3>Source Code</h3>
+                    <p>
+                        The source code can be accessed at <a href="https://github.com/mengjunxie/ae-lda">github.com/mengjunxie/ae-lda</a> under the <a target="_blank" href="http://mit-license.org/">MIT license</a>.
+                    </p>
+                </div>                
+            </div>
+
+            <hr>
+
+            <footer>
+                <p>&copy; UALR & UAMS, 2013</p>
+            </footer>
+
+        </div> <!-- /container -->
+
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+    
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        -->
+    </body>
+</html>
